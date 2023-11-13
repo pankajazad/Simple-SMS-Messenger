@@ -119,9 +119,7 @@ class NotificationHelper(private val context: Context) {
         if (replyAction != null && context.config.lockScreenVisibilitySetting == LOCK_SCREEN_SENDER_MESSAGE) {
             builder.addAction(replyAction)
         }
-
-        builder.addAction(com.simplemobiletools.commons.R.drawable.ic_check_vector, context.getString(R.string.mark_as_read), markAsReadPendingIntent)
-            .setChannelId(NOTIFICATION_CHANNEL)
+        
         if (isNoReplySms) {
             builder.addAction(
                 com.simplemobiletools.commons.R.drawable.ic_delete_vector,
