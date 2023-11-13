@@ -53,14 +53,6 @@ class NotificationHelper(private val context: Context) {
         }
         val contentPendingIntent =
             PendingIntent.getActivity(context, notificationId, contentIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
-
-        val markAsReadIntent = Intent(context, MarkAsReadReceiver::class.java).apply {
-            action = MARK_AS_READ
-            putExtra(THREAD_ID, threadId)
-        }
-        val markAsReadPendingIntent =
-            PendingIntent.getBroadcast(context, notificationId, markAsReadIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE)
-
         val deleteSmsIntent = Intent(context, DeleteSmsReceiver::class.java).apply {
             putExtra(THREAD_ID, threadId)
             putExtra(MESSAGE_ID, messageId)
