@@ -36,7 +36,7 @@ jobs:
 
       # Builds the apk using Gradle
       - name: Build APK
-        app: ./gradlew assembleDebug
+        run: ./gradlew assembleRelease
 
       # Uploads the apk as an artifact
       - name: Upload APK
